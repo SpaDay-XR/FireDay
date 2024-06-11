@@ -160,7 +160,6 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   androidMinAspectRatio: 1
   applicationIdentifier:
-    Android: com.DefaultCompany.FireDay
     Standalone: com.DefaultCompany.FireDay
   buildNumber:
     Bratwurst: 0
