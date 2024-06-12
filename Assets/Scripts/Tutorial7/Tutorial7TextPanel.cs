@@ -21,6 +21,7 @@ public class Tutorial7TextPanel : MonoBehaviour
     public GameObject image;
 
     public Camera cam;
+    public GameObject finishPoint;
 
     private float _nextTime;
     // Start is called before the first frame update
@@ -76,7 +77,8 @@ public class Tutorial7TextPanel : MonoBehaviour
                 smokeRoomTutorial.StartSmoking();
 
                 textField.SetActive(true);
-                image.SetActive(false);   
+                image.SetActive(false);
+                transform.position = finishPoint.transform.position;   
                 this.gameObject.SetActive(false);
                 curr = curr + 1;
             } else if (curr == text.Length + 1) {
