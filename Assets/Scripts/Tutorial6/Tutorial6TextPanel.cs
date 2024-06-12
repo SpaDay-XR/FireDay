@@ -17,6 +17,8 @@ public class Tutorial6TextPanel : MonoBehaviour
 
     public GameObject image;
 
+    public Camera cam;
+
     private float _nextTime;
 
     // Start is called before the first frame update
@@ -43,11 +45,14 @@ public class Tutorial6TextPanel : MonoBehaviour
 
         //Default text
         textField.GetComponent<TextMeshProUGUI>().SetText(text[0]);
+        transform.position = new Vector3 (transform.position.x, cam.transform.position.y, transform.position.z);
     }
 
     // Update is called once per frame
     void Update()
     {
+        transform.LookAt(cam.transform);
+        transform.position = Vector3.Lerp(transform.position, new Vector3 (transform.position.x, cam.transform.position.y, transform.position.z), 0.2f);
         //textField.GetComponent<TextMeshProUGUI>().SetText("A");
     }
 

@@ -18,6 +18,7 @@ public class Tutorial5TextPanel : MonoBehaviour
     public GameObject leftButton;
 
     public GameObject image;
+    public Camera cam;
 
     private float _nextTime;
 
@@ -41,11 +42,14 @@ public class Tutorial5TextPanel : MonoBehaviour
 
         //Default text
         textField.GetComponent<TextMeshProUGUI>().SetText(text[0]);
+        transform.position = new Vector3 (transform.position.x, cam.transform.position.y, transform.position.z);
     }
 
     // Update is called once per frame
     void Update()
     {
+        transform.LookAt(cam.transform);
+        transform.position = Vector3.Lerp(transform.position, new Vector3 (transform.position.x, cam.transform.position.y, transform.position.z), 0.2f);
         //textField.GetComponent<TextMeshProUGUI>().SetText("A");
     }
 

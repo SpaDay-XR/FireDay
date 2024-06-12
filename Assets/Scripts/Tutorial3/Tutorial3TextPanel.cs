@@ -37,6 +37,7 @@ public class Tutorial3TextPanel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         //textField.GetComponent<TextMeshProUGUI>().SetText("A");
     }
 

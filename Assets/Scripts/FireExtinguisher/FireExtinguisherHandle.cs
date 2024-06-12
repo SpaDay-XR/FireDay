@@ -9,6 +9,7 @@ public class FireExtinguisherHandle : MonoBehaviour
 
     public ParticleSystem spray;
 
+    public AudioSource fireAudio;
     public bool hasPin = true;
 
     // Start is called before the first frame update
@@ -24,17 +25,27 @@ public class FireExtinguisherHandle : MonoBehaviour
         {
             // TODO: Water comes out
             Debug.Log("Water comes out");
+            if (!fireAudio.isPlaying)
+            {
+                fireAudio.Play();
+            }
             spray.Play();
         } else if (hand1 != null || !hand1.isGrabbing) {
             spray.Stop();
+            fireAudio.Stop();
         }
         if (hand2 != null && hand2.isGrabbing && !hasPin)
         {
             // TODO: Water comes out
             Debug.Log("Water comes out");
+            if (!fireAudio.isPlaying)
+            {
+                fireAudio.Play();
+            }
             spray.Play();
-        } else if (hand1 != null || !hand1.isGrabbing) {
+        } else if (hand2 != null || !hand2.isGrabbing) {
             spray.Stop();
+            fireAudio.Stop();
         }
     }
 
